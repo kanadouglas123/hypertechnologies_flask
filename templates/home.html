@@ -2,75 +2,102 @@
 
 {% block content %}
 <main>
-    <section class="hero-section py-5 bg-light">
-        <div class="container">
+    <!-- Hero Section -->
+    <section class="hero-section py-5 bg-primary text-white" style="background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);">
+        <div class="container py-5">
             <div class="hero-content text-center">
-                <h1 class="display-4 fw-bold">Innovate and be serviced with <span class="text-primary">Hyper Technologies</span></h1>
-                <p class="lead">Leading the way in computer services, new technology, and software development.</p>
-                <a href="{{ url_for('services') }}" class="btn btn-primary btn-lg mt-3">Explore Services</a>
+                <h1 class="display-3 fw-bold animate__animated animate__fadeIn">Innovate with <span class="text-warning">Hyper Technologies</span></h1>
+                <p class="lead mb-4 animate__animated animate__fadeIn" style="animation-delay: 0.2s;">Leading the way in computer services, new technology, and software development.</p>
+                <a href="{{ url_for('services') }}" class="btn btn-light btn-lg mt-3 animate__animated animate__pulse" style="animation-delay: 0.4s;">Explore Services</a>
             </div>
         </div>
     </section>
 
+    <!-- About Us Section -->
+    <section class="about-us py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold display-5">About Hyper Technologies</h2>
+            <div class="row align-items-center g-5">
+                <div class="col-md-6 order-md-2 animate__animated animate__fadeInRight">
+                    <img src="{{ url_for('static', filename='images/about-us.jpeg') }}" alt="About Hyper Technologies" class="img-fluid rounded-3 shadow-lg">
+                </div>
+                <div class="col-md-6 order-md-1 animate__animated animate__fadeInLeft">
+                    <h3 class="h4 fw-bold text-primary">Our Mission</h3>
+                    <p class="text-muted">At Hyper Technologies, we are committed to driving innovation and delivering cutting-edge IT solutions that empower businesses in Uganda and beyond. Founded in 2018, our mission is to transform ideas into reality through technology, fostering growth and success for our clients.</p>
+                    <h3 class="h4 fw-bold text-primary mt-4">Our Vision</h3>
+                    <p class="text-muted">To be the leading IT solutions provider in Africa, recognized for our innovative approach, client-centric services, and contributions to technological advancement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
     <section class="services-overview py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Our Core Services</h2>
+            <h2 class="text-center mb-5 fw-bold display-5">Our Core Services</h2>
             <div class="row text-center g-4">
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm p-4">
-                        <i class="fas fa-code fa-3x text-primary mb-3"></i>
-                        <h3 class="h5 fw-bold">Software Development</h3>
-                        <p class="card-text text-muted">Crafting custom software solutions tailored to your business needs, from enterprise applications to mobile apps.</p>
+                    <div class="card h-100 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.1s;">
+                        <div class="card-body p-4">
+                            <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                            <h3 class="h5 fw-bold">Software Development</h3>
+                            <p class="card-text text-muted">Crafting custom software solutions tailored to your business needs, from enterprise applications to mobile apps.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm p-4">
-                        <i class="fas fa-cloud fa-3x text-primary mb-3"></i>
-                        <h3 class="h5 fw-bold">Cloud Computing</h3>
-                        <p class="card-text text-muted">Leveraging cloud technologies for scalable, secure, and reliable infrastructure, including AWS, Azure, and Google Cloud.</p>
+                    <div class="card h-100 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+                        <div class="card-body p-4">
+                            <i class="fas fa-cloud fa-3x text-primary mb-3"></i>
+                            <h3 class="h5 fw-bold">Cloud Computing</h3>
+                            <p class="card-text text-muted">Leveraging cloud technologies for scalable, secure, and reliable infrastructure, including AWS, Azure, and Google Cloud.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card h-100 shadow-sm p-4">
-                        <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
-                        <h3 class="h5 fw-bold">Cybersecurity Services</h3>
-                        <p class="card-text text-muted">Protecting your data and systems from threats with comprehensive security audits, threat detection, and incident response.</p>
+                    <div class="card h-100 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.3s;">
+                        <div class="card-body p-4">
+                            <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                            <h3 class="h5 fw-bold">Cybersecurity Services</h3>
+                            <p class="card-text text-muted">Protecting your data and systems from threats with comprehensive security audits, threat detection, and incident response.</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-5">
-                <a href="{{ url_for('services') }}" class="btn btn-outline-primary">View All Services</a>
+                <a href="{{ url_for('services') }}" class="btn btn-outline-primary btn-lg">View All Services</a>
             </div>
         </div>
     </section>
 
+    <!-- Why Choose Us Section -->
     <section class="why-choose-us py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-5">Why Choose Hyper Technologies?</h2>
+            <h2 class="text-center mb-5 fw-bold display-5">Why Choose Hyper Technologies?</h2>
             <div class="row align-items-center g-5">
-                <div class="col-md-6">
-                    <img src="{{ url_for('static', filename='images/why-us.jpeg') }}" alt="Why Choose Us" class="img-fluid rounded-lg shadow-lg">
+                <div class="col-md-6 animate__animated animate__fadeInLeft">
+                    <img src="{{ url_for('static', filename='images/why-us.jpeg') }}" alt="Why Choose Us" class="img-fluid rounded-3 shadow-lg">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 animate__animated animate__fadeInRight">
                     <ul class="list-unstyled">
                         <li class="d-flex align-items-start mb-4">
                             <i class="fas fa-check-circle fa-2x text-primary me-3 mt-1"></i>
                             <div>
-                                <h3 class="h5 fw-bold">Expertise and Innovation</h3>
+                                <h3 class="h5 fw-bold text-primary">Expertise and Innovation</h3>
                                 <p class="text-muted mb-0">Our team consists of certified experts who are passionate about using the latest technology to solve your toughest challenges.</p>
                             </div>
                         </li>
                         <li class="d-flex align-items-start mb-4">
                             <i class="fas fa-handshake fa-2x text-primary me-3 mt-1"></i>
                             <div>
-                                <h3 class="h5 fw-bold">Client-Centric Approach</h3>
+                                <h3 class="h5 fw-bold text-primary">Client-Centric Approach</h3>
                                 <p class="text-muted mb-0">Your success is our priority. We work closely with you to understand your goals and deliver solutions that exceed expectations.</p>
                             </div>
                         </li>
                         <li class="d-flex align-items-start mb-4">
                             <i class="fas fa-dollar-sign fa-2x text-primary me-3 mt-1"></i>
                             <div>
-                                <h3 class="h5 fw-bold">Cost-Effective Solutions</h3>
+                                <h3 class="h5 fw-bold text-primary">Cost-Effective Solutions</h3>
                                 <p class="text-muted mb-0">We provide high-quality, scalable services without the premium price tag, ensuring a great return on your investment.</p>
                             </div>
                         </li>
@@ -80,102 +107,226 @@
         </div>
     </section>
 
+    <!-- Case Studies Section -->
+    <section class="case-studies py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold display-5">Our Success Stories</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.1s;">
+                        <img src="{{ url_for('static', filename='images/case-study1.jpeg') }}" alt="E-Commerce Platform" class="card-img-top rounded-top">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">E-Commerce Platform for Retail</h3>
+                            <p class="text-muted">Developed a scalable e-commerce platform for a leading retailer in Kampala, increasing their online sales by 40% within six months.</p>
+                            <a href="{{ url_for('case_study', id=1) }}" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+                        <img src="{{ url_for('static', filename='images/case-study2.jpeg') }}" alt="School Management System" class="card-img-top rounded-top">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">School Management System</h3>
+                            <p class="text-muted">Built a comprehensive system for Seeta College, streamlining student records, fee payments, and communication, reducing administrative workload by 30%.</p>
+                            <a href="{{ url_for('case_study', id=2) }}" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.3s;">
+                        <img src="{{ url_for('static', filename='images/case-study3.jpeg') }}" alt="AI-Powered Analytics" class="card-img-top rounded-top">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">AI-Powered Analytics for SMEs</h3>
+                            <p class="text-muted">Implemented an AI-driven analytics dashboard for a local SME, providing real-time insights that boosted decision-making efficiency.</p>
+                            <a href="{{ url_for('case_study', id=3) }}" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold display-5">Meet Our Team</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 text-center animate__animated animate__fadeIn" style="animation-delay: 0.1s;">
+                        <img src="{{ url_for('static', filename='images/team-member1.jpeg') }}" alt="Team Member" class="card-img-top rounded-circle mx-auto mt-3" style="width: 150px; height: 150px; object-fit: cover;">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">Jane Nankya</h3>
+                            <p class="text-muted mb-2">CEO & Founder</p>
+                            <p class="card-text text-muted">With over 15 years in tech leadership, Jane drives our vision for innovative IT solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 text-center animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+                        <img src="{{ url_for('static', filename='images/team-member2.jpeg') }}" alt="Team Member" class="card-img-top rounded-circle mx-auto mt-3" style="width: 150px; height: 150px; object-fit: cover;">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">Michael Okello</h3>
+                            <p class="text-muted mb-2">Lead Developer</p>
+                            <p class="card-text text-muted">Michael specializes in full-stack development, delivering robust and scalable applications.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 text-center animate__animated animate__fadeIn" style="animation-delay: 0.3s;">
+                        <img src="{{ url_for('static', filename='images/team-member3.jpeg') }}" alt="Team Member" class="card-img-top rounded-circle mx-auto mt-3" style="width: 150px; height: 150px; object-fit: cover;">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">Sarah Mirembe</h3>
+                            <p class="text-muted mb-2">Cybersecurity Expert</p>
+                            <p class="card-text text-muted">Sarah ensures our clients' systems are secure with her expertise in threat detection and mitigation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moving Images Section -->
     <section class="moving-images py-5">
         <div class="container">
-            <h2 class="text-center mb-4">Our Expertise</h2>
-            <div class="image-slider d-flex overflow-auto">
-                <img src="{{ url_for('static', filename='images/app.png') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/web.jpeg') }}" alt="AI Solutions" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/it.jpeg') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/tec.jpeg') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/vidoe.jpeg') }}" alt="Cloud Computing" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/tec2.jpeg') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/grapic.jpeg') }}" alt="Graphic Design" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/tec1.jpeg') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/app.png') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/web.jpeg') }}" alt="AI Solutions" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/it.jpeg') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/vidoe.jpeg') }}" alt="Cloud Computing" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/app.png') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="{{ url_for('static', filename='images/it.jpeg') }}" alt="App Development" class="img-fluid me-2" style="max-width: 200px;">
+            <h2 class="text-center mb-4 fw-bold display-5">Our Expertise</h2>
+            <div class="image-slider d-flex overflow-auto p-3 bg-light rounded-3" style="scroll-behavior: smooth;">
+                <img src="{{ url_for('static', filename='images/app.png') }}" alt="Web Development" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/web.jpeg') }}" alt="AI Solutions" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/it.jpeg') }}" alt="Web Development" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/tec.jpeg') }}" alt="Web Development" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/vidoe.jpeg') }}" alt="Cloud Computing" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/tec2.jpeg') }}" alt="Web Development" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/grapic.jpeg') }}" alt="Graphic Design" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/tec1.jpeg') }}" alt="Web Development" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/app.png') }}" alt="Web Development" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/web.jpeg') }}" alt="AI Solutions" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/it.jpeg') }}" alt="Web Development" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/vidoe.jpeg') }}" alt="Cloud Computing" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/app.png') }}" alt="Web Development" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="{{ url_for('static', filename='images/it.jpeg') }}" alt="App Development" class="img-fluid me-2 rounded" style="max-width: 200px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
             </div>
         </div>
     </section>
 
+    <!-- Testimonials Section -->
     <section class="testimonials py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">What Our Clients Say</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="testimonial card p-4">
-                        <p class="card-text">"HyperTech transformed our business with cutting-edge AI solutions!"</p>
-                        <h4 class="card-title text-end">- Bole Abel</h4>
+            <h2 class="text-center mb-5 fw-bold display-5">What Our Clients Say</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="testimonial card p-4 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.1s;">
+                        <p class="card-text fst-italic">"HyperTech transformed our business with cutting-edge AI solutions!"</p>
+                        <h4 class="card-title text-end text-primary">- Bole Abel</h4>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="testimonial card p-4">
-                        <p class="card-text">"Their team built an amazing web platform for us. Highly recommended!"</p>
-                        <h4 class="card-title text-end">- Kizza Marvin, Headteacher Seeta College</h4>
+                <div class="col-md-6">
+                    <div class="testimonial card p-4 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+                        <p class="card-text fst-italic">"Their team built an amazing web platform for us. Highly recommended!"</p>
+                        <h4 class="card-title text-end text-primary">- Kizza Marvin, Headteacher Seeta College</h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta py-5 text-center">
+    <!-- Blog Highlights Section -->
+    <section class="blog-highlights py-5">
         <div class="container">
-            <h2 class="display-5 fw-bold">Start Your Tech Journey With Us</h2>
-            <p class="lead">Let's innovate together and build the future of technology.</p>
-            <h3 class="mt-4">Case Studies</h3>
-            <h4>Delivering Future IT Solutions Today</h4>
-            <p>Find out how businesses are succeeding with our IT services. As the leading full-service IT company in Uganda, <br>we leverage our expertise, latest technologies, and innovations to constantly drive growth to our clients.<br>Take a look at some sample case studies and client success stories from our recent works.</p>
-            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg mt-3">Get in Touch</a>
+            <h2 class="text-center mb-5 fw-bold display-5">Recent Blog Posts</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.1s;">
+                        <img src="{{ url_for('static', filename='images/blog1.jpeg') }}" alt="Blog Post" class="card-img-top rounded-top">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">The Future of AI in African Businesses</h3>
+                            <p class="text-muted">Explore how AI is revolutionizing industries across Africa and what it means for your business.</p>
+                            <a href="{{ url_for('blog_post', id=1) }}" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+                        <img src="{{ url_for('static', filename='images/blog2.jpeg') }}" alt="Blog Post" class="card-img-top rounded-top">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">Scaling with Cloud: A Guide for SMEs</h3>
+                            <p class="text-muted">Learn how cloud computing can help small businesses scale efficiently and securely.</p>
+                            <a href="{{ url_for('blog_post', id=2) }}" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm border-0 animate__animated animate__fadeIn" style="animation-delay: 0.3s;">
+                        <img src="{{ url_for('static', filename='images/blog3.jpeg') }}" alt="Blog Post" class="card-img-top rounded-top">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">Cybersecurity Tips for 2025</h3>
+                            <p class="text-muted">Stay ahead of cyber threats with our expert tips for securing your business in the digital age.</p>
+                            <a href="{{ url_for('blog_post', id=3) }}" class="btn btn-outline-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="{{ url_for('blog') }}" class="btn btn-outline-primary btn-lg">View All Posts</a>
+            </div>
         </div>
     </section>
 
+    <!-- Call to Action Section -->
+    <section class="cta py-5 text-center bg-primary text-white" style="background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);">
+        <div class="container py-5">
+            <h2 class="display-5 fw-bold animate__animated animate__fadeIn">Start Your Tech Journey With Us</h2>
+            <p class="lead mb-4 animate__animated animate__fadeIn" style="animation-delay: 0.2s;">Let's innovate together and build the future of technology.</p>
+            <h3 class="mt-4 fw-bold">Case Studies</h3>
+            <h4>Delivering Future IT Solutions Today</h4>
+            <p class="mb-4">Discover how we've empowered businesses like yours with transformative IT solutions. From boosting e-commerce sales by 40% for a Kampala retailer to streamlining operations for Seeta College, our case studies highlight real-world success. Explore our work and see how we can drive growth for you.</p>
+            <a href="{{ url_for('contact') }}" class="btn btn-light btn-lg mt-3 animate__animated animate__pulse" style="animation-delay: 0.4s;">Get in Touch</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section class="contact py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">Contact Us</h2>
-            <p class="text-center">Have a question or need a tech solution? Reach out to us today!</p>
+            <h2 class="text-center mb-5 fw-bold display-5">Contact Us</h2>
+            <p class="text-center lead">Have a question or need a tech solution? Reach out to us today!</p>
             <div class="contact-details row justify-content-center my-4">
-                <div class="contact-info col-md-4 text-center mb-3">
-                    <i class="fas fa-map-marker-alt fa-2x mb-2"></i>
+                <div class="col-md-4 text-center mb-4 animate__animated animate__fadeIn" style="animation-delay: 0.1s;">
+                    <i class="fas fa-map-marker-alt fa-2x text-primary mb-2"></i>
                     <p>123 Lugazi Kinyoro Road, Lugazi Town</p>
                 </div>
-                <div class="contact-info col-md-4 text-center mb-3">
-                    <i class="fas fa-phone-alt fa-2x mb-2"></i>
+                <div class="col-md-4 text-center mb-4 animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+                    <i class="fas fa-phone-alt fa-2x text-primary mb-2"></i>
                     <p>+256 746937568</p>
                 </div>
-                <div class="contact-info col-md-4 text-center mb-3">
-                    <i class="fas fa-envelope fa-2x mb-2"></i>
+                <div class="col-md-4 text-center mb-4 animate__animated animate__fadeIn" style="animation-delay: 0.3s;">
+                    <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
                     <p>kanadouglas5@gmail.com</p>
                 </div>
             </div>
-            <h3 class="text-center mb-4">Send Us a Message</h3>
+            <h3 class="text-center mb-4 fw-bold">Send Us a Message</h3>
             <div class="row justify-content-center">
-                <form class="contact-form col-md-6">
+                <form class="contact-form col-md-6 animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
                     <div class="mb-3">
-                        <input type="text" class="form-control" placeholder="Your Name" required>
+                        <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
                     </div>
                     <div class="mb-3">
-                        <input type="email" class="form-control" placeholder="Your Email" required>
+                        <input type="email" class="form-control form-control-lg" placeholder="Your Email" required>
                     </div>
                     <div class="mb-3">
-                        <textarea class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                        <textarea class="form-control form-control-lg" placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
                 </form>
             </div>
         </div>
     </section>
 </main>
-<a href="#" class="back-to-top btn btn-primary rounded-circle" style="position: fixed; bottom: 20px; right: 20px; display: none;"><i class="fas fa-arrow-up"></i></a>
+<a href="#" class="back-to-top btn btn-primary rounded-circle shadow" style="position: fixed; bottom: 20px; right: 20px; display: none; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;"><i class="fas fa-arrow-up"></i></a>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var backToTopBtn = document.querySelector('.back-to-top');
         window.addEventListener('scroll', function() {
             if (window.scrollY > 300) {
-                backToTopBtn.style.display = 'block';
+                backToTopBtn.style.display = 'flex';
             } else {
                 backToTopBtn.style.display = 'none';
             }
