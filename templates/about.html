@@ -1,285 +1,240 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<style>
-    /* Basic page styles */
-body {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-}
+<main>
+    <!-- Header Section -->
+    <header class="about-header py-5 text-white text-center position-relative" style="background: url('{{ url_for('static', filename='images/header-bg.jpg') }}') no-repeat center center/cover; min-height: 350px;">
+        <div class="overlay position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.6);"></div>
+        <div class="container position-relative z-1 py-5 animate__animated animate__fadeIn d-flex flex-column justify-content-center align-items-center">
+            <h1 class="display-3 fw-bold text-white text-shadow">About Hyper Technologies</h1>
+            <p class="lead text-white mx-auto" style="max-width: 600px;">Pioneering tomorrow's technology today.</p>
+        </div>
+    </header>
 
-/* Header Section */
-.about-header {
-    background: url('{{ url_for('static', filename='images/header-bg.jpg') }}') no-repeat center center;
-    background-size: cover;
-    position: relative;
-    height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.about-header .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.about-header h1 {
-    position: relative;
-    z-index: 10;
-    font-size: 3rem;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-/* Main Sections */
-.about-section,
-.story-section,
-.team-section,
-.achievements-section {
-    padding: 80px 0;
-}
-
-/* Story Section */
-.story-section img {
-    border-radius: 15px;
-    transition: transform 0.4s ease-in-out;
-}
-
-.story-section img:hover {
-    transform: scale(1.02);
-}
-
-/* Team Member Images */
-.team-member img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.team-member img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Achievement Boxes */
-.achievement-box {
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.achievement-box:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
-}
-
-.achievement-box h3 {
-    font-size: 3rem;
-}
-
-/* Join Our Team Section */
-.join-us-section {
-    background-color: #f8f9fa;
-    padding: 80px 0;
-    text-align: center;
-}
-
-.join-us-section .card {
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .about-header h1 {
-        font-size: 2.5rem;
-    }
-    .achievement-box h3 {
-        font-size: 2.5rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .about-header {
-        height: 250px;
-    }
-    .about-header h1 {
-        font-size: 2rem;
-    }
-    .about-section p.lead {
-        font-size: 1rem;
-    }
-}
-</style>
-
-<header class="about-header text-white text-center py-5">
-    <div class="overlay"></div>
-    <div class="container">
-        <h1 class="display-3 fw-bold">About Hyper Technologies</h1>
-        <p class="lead">Pioneering tomorrow's technology today.</p>
-    </div>
-</header>
-<section class="about-section py-5">
-    <div class="container">
-        <p class="lead text-center mb-5">Hyper Technologies is a leading tech company specializing in AI, web development, and cloud computing. We are driven by a passion for innovation and a commitment to delivering exceptional digital solutions.</p>
-        <div class="row gx-5">
-            <div class="col-md-6 mb-4">
-                <h2 class="text-primary">Our Mission</h2>
-                <p>At Hyper Technologies, our mission is to innovate and deliver top-tier technology solutions that empower businesses and individuals worldwide. We are committed to excellence, integrity, and customer satisfaction. We strive to be a trusted partner in our clients' growth and success.</p>
-            </div>
-            <div class="col-md-6 mb-4">
-                <h2 class="text-primary">Our Values</h2>
-                <ul class="list-unstyled">
-                    <li><i class="fas fa-lightbulb text-primary me-2"></i><strong>Innovation:</strong> We embrace cutting-edge technologies to stay ahead of industry trends.</li>
-                    <li><i class="fas fa-medal text-primary me-2"></i><strong>Excellence:</strong> Delivering high-quality solutions is our top priority.</li>
-                    <li><i class="fas fa-shield-alt text-primary me-2"></i><strong>Integrity:</strong> We conduct all our dealings with transparency and trust.</li>
-                    <li><i class="fas fa-users text-primary me-2"></i><strong>Customer Focus:</strong> We ensure client satisfaction at every step of the process.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="story-section bg-light py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 text-primary">Our Story</h2>
-        <div class="row align-items-center gx-5">
-            <div class="col-md-6 mb-4">
-                <img src="{{ url_for('static', filename='images/app.png') }}" alt="Our Story" class="img-fluid rounded shadow-sm">
-            </div>
-            <div class="col-md-6 mb-4">
-                <p>Founded on the principles of creativity and technical excellence, Hyper Technologies began with a simple goal: to make technology accessible and impactful for everyone. Our journey has been defined by our ability to adapt to a rapidly changing digital landscape, always pushing the boundaries of what's possible.</p>
-                <p>Today, we are a diverse team of passionate experts dedicated to solving complex problems and creating innovative products that drive real-world results. We believe in building lasting relationships with our clients, transforming their ideas into reality.</p>
+    <!-- About Section -->
+    <section class="about-section py-5 bg-light">
+        <div class="container">
+            <p class="lead text-center mb-5 animate__animated animate__fadeIn mx-auto" style="max-width: 800px; animation-delay: 0.2s;">Hyper Technologies is a leading tech company specializing in AI, web development, and cloud computing. We are driven by a passion for innovation and a commitment to delivering exceptional digital solutions.</p>
+            <div class="row g-5 justify-content-center">
+                <div class="col-md-5 mb-4 animate__animated animate__fadeInLeft" style="animation-delay: 0.3s;">
+                    <div class="card shadow-sm border-0 text-center">
+                        <div class="card-body">
+                            <h2 class="h3 fw-bold text-primary">Our Mission</h2>
+                            <p>At Hyper Technologies, our mission is to innovate and deliver top-tier technology solutions that empower businesses and individuals worldwide. We are committed to excellence, integrity, and customer satisfaction. We strive to be a trusted partner in our clients' growth and success.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 mb-4 animate__animated animate__fadeInRight" style="animation-delay: 0.3s;">
+                    <div class="card shadow-sm border-0 text-center">
+                        <div class="card-body">
+                            <h2 class="h3 fw-bold text-primary">Our Values</h2>
+                            <ul class="list-unstyled text-start mx-auto" style="max-width: 400px;">
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-lightbulb fa-2x text-primary me-3"></i>
+                                    <div>
+                                        <strong>Innovation:</strong> We embrace cutting-edge technologies to stay ahead of industry trends.
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-medal fa-2x text-primary me-3"></i>
+                                    <div>
+                                        <strong>Excellence:</strong> Delivering high-quality solutions is our top priority.
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-shield-alt fa-2x text-primary me-3"></i>
+                                    <div>
+                                        <strong>Integrity:</strong> We conduct all our dealings with transparency and trust.
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-users fa-2x text-primary me-3"></i>
+                                    <div>
+                                        <strong>Customer Focus:</strong> We ensure client satisfaction at every step of the process.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<hr class="my-5">
-
-<section class="team-section py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 text-primary">Meet Our Team</h2>
-        <div class="row text-center gx-4 gy-4">
-            <div class="col-sm-6 col-md-4 team-member">
-                <img src="{{ url_for('static', filename='images/douglas.jpg') }}" alt="Team Member" class="img-fluid rounded-circle mb-3 border border-3 border-primary shadow-sm">
-                <h3 class="h5 fw-bold">Eng. Wasswa Douglas</h3>
-                <p class="text-muted">Founder & CEO</p>
-            </div>
-            <div class="col-sm-6 col-md-4 team-member">
-                <img src="{{ url_for('static', filename='images/cathy.jpg') }}" alt="Team Member" class="img-fluid rounded-circle mb-3 border border-3 border-primary shadow-sm">
-                <h3 class="h5 fw-bold">Naluyange Catherine</h3>
-                <p class="text-muted">Chief Technology Officer</p>
-            </div>
-            <div class="col-sm-6 col-md-4 team-member">
-                <img src="{{ url_for('static', filename='images/douglas.jpg') }}" alt="Team Member" class="img-fluid rounded-circle mb-3 border border-3 border-primary shadow-sm">
-                <h3 class="h5 fw-bold">Douglas kana</h3>
-                <p class="text-muted">Marketing Manager</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<hr class="my-5">
-
-<section class="achievements-section bg-light py-5">
-    <div class="container">
-        <h2 class="text-center mb-5 text-primary">Our Achievements</h2>
-        <div class="row text-center gx-4 gy-4">
-            <div class="col-sm-6 col-md-3">
-                <div class="achievement-box p-4 border rounded shadow-sm bg-white">
-                    <h3 class="display-4 fw-bold text-primary">10+</h3>
-                    <p class="lead text-muted">Projects Completed</p>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="achievement-box p-4 border rounded shadow-sm bg-white">
-                    <h3 class="display-4 fw-bold text-primary">20+</h3>
-                    <p class="lead text-muted">Clients Worldwide</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="achievement-box p-4 border rounded shadow-sm bg-white">
-                    <h3 class="display-4 fw-bold text-primary">10+</h3>
-                    <p class="lead text-muted">Awards Won</p>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-3">
-                <div class="achievement-box p-4 border rounded shadow-sm bg-white">
-                    <h3 class="display-4 fw-bold text-primary">50+</h3>
-                    <p class="lead text-muted">Team Members</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="join-us-section">
-    <div class="container">
-        <div class="card p-5">
-            <h2 class="mb-4 text-primary">Join Our Team</h2>
-            <p class="lead">Passionate about technology? We're always looking for talented individuals to join our growing family. Explore career opportunities with us.</p>
-            <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg mt-3">View Open Positions</a>
-        </div>
-    </div>
-</section>
-
-<section class="contact py-5">
-    <div class="container">
-        <div class="row gx-5">
-            <div class="col-md-6 mb-4">
-                <h2 class="text-primary">Get in Touch</h2>
-                <p>Have a question or want to discuss a project? We'd love to hear from you.</p>
-                <ul class="list-unstyled">
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
-                        <div>
-                            <strong>Location:</strong>
-                            <p class="mb-0">123 Tech Avenue, Innovation City, UG</p>
+    <!-- Story Section -->
+    <section class="story-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 h3 fw-bold text-primary animate__animated animate__fadeIn">Our Story</h2>
+            <div class="row align-items-center g-5 justify-content-center">
+                <div class="col-md-5 mb-4 animate__animated animate__fadeInLeft" style="animation-delay: 0.2s;">
+                    <img src="{{ url_for('static', filename='images/app.png') }}" alt="Our Story" class="img-fluid rounded-3 shadow-lg mx-auto d-block" style="transition: transform 0.4s ease-in-out;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+                <div class="col-md-5 mb-4 animate__animated animate__fadeInRight" style="animation-delay: 0.2s;">
+                    <div class="card shadow-sm border-0 text-center">
+                        <div class="card-body">
+                            <h2 class="h3 fw-bold text-primary">Who We Are</h2>
+                            <p>Founded on the principles of creativity and technical excellence, Hyper Technologies began with a simple goal: to make technology accessible and impactful for everyone. Our journey has been defined by our ability to adapt to a rapidly changing digital landscape, always pushing the boundaries of what's possible.</p>
+                            <p>Today, we are a diverse team of passionate experts dedicated to solving complex problems and creating innovative products that drive real-world results. We believe in building lasting relationships with our clients, transforming their ideas into reality.</p>
                         </div>
-                    </li>
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fas fa-envelope fa-2x text-primary me-3"></i>
-                        <div>
-                            <strong>Email:</strong>
-                            <p class="mb-0">info@hypertech.com</p>
-                        </div>
-                    </li>
-                    <li class="d-flex align-items-center mb-3">
-                        <i class="fas fa-phone-alt fa-2x text-primary me-3"></i>
-                        <div>
-                            <strong>Phone:</strong>
-                            <p class="mb-0">+256 746937568</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md-6 mb-4">
-                <h2 class="text-primary">Contact Form</h2>
-                <form>
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" required>
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- Team Section -->
+    <section class="team-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 h3 fw-bold text-primary animate__animated animate__fadeIn">Meet Our Team</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-sm-6 col-md-4 team-member animate__animated animate__fadeIn" style="animation-delay: 0.1s;">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                        <img src="{{ url_for('static', filename='images/douglas.jpg') }}" alt="Team Member" class="card-img-top rounded-circle mx-auto mt-3 border border-3 border-primary" style="width: 150px; height: 150px; object-fit: cover; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">Eng. Wasswa Douglas</h3>
+                            <p class="text-muted">Founder & CEO</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 team-member animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                        <img src="{{ url_for('static', filename='images/cathy.jpg') }}" alt="Team Member" class="card-img-top rounded-circle mx-auto mt-3 border border-3 border-primary" style="width: 150px; height: 150px; object-fit: cover; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">Naluyange Catherine</h3>
+                            <p class="text-muted">Chief Technology Officer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4 team-member animate__animated animate__fadeIn" style="animation-delay: 0.3s;">
+                    <div class="card h-100 shadow-sm border-0 text-center">
+                        <img src="{{ url_for('static', filename='images/douglas.jpg') }}" alt="Team Member" class="card-img-top rounded-circle mx-auto mt-3 border border-3 border-primary" style="width: 150px; height: 150px; object-fit: cover; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none'">
+                        <div class="card-body">
+                            <h3 class="h5 fw-bold text-primary">Douglas Kana</h3>
+                            <p class="text-muted">Marketing Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 h3 fw-bold text-primary animate__animated animate__fadeIn">Our Achievements</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-sm-6 col-md-3 animate__animated animate__fadeIn" style="animation-delay: 0.1s;">
+                    <div class="card achievement-box p-4 shadow-sm border-0 bg-white text-center" style="transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <h3 class="display-4 fw-bold text-primary">10+</h3>
+                        <p class="lead text-muted">Projects Completed</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 animate__animated animate__fadeIn" style="animation-delay: 0.2s;">
+                    <div class="card achievement-box p-4 shadow-sm border-0 bg-white text-center" style="transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <h3 class="display-4 fw-bold text-primary">20+</h3>
+                        <p class="lead text-muted">Clients Worldwide</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 animate__animated animate__fadeIn" style="animation-delay: 0.3s;">
+                    <div class="card achievement-box p-4 shadow-sm border-0 bg-white text-center" style="transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <h3 class="display-4 fw-bold text-primary">10+</h3>
+                        <p class="lead text-muted">Awards Won</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+                    <div class="card achievement-box p-4 shadow-sm border-0 bg-white text-center" style="transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.15)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                        <h3 class="display-4 fw-bold text-primary">50+</h3>
+                        <p class="lead text-muted">Team Members</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section class="join-us-section py-5 bg-light">
+        <div class="container">
+            <div class="card p-5 shadow-sm border-0 text-center animate__animated animate__fadeIn mx-auto" style="animation-delay: 0.2s; max-width: 600px;">
+                <h2 class="h3 fw-bold text-primary">Join Our Team</h2>
+                <p class="lead text-muted">Passionate about technology? We're always looking for talented individuals to join our growing family. Explore career opportunities with us.</p>
+                <a href="{{ url_for('contact') }}" class="btn btn-primary btn-lg mt-3 animate__animated animate__pulse animate__infinite">View Open Positions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 h3 fw-bold text-primary animate__animated animate__fadeIn">Get in Touch</h2>
+            <div class="row g-5 justify-content-center">
+                <div class="col-md-5 mb-4 animate__animated animate__fadeInLeft" style="animation-delay: 0.2s;">
+                    <div class="card shadow-sm border-0 text-center">
+                        <div class="card-body">
+                            <h2 class="h3 fw-bold text-primary">Contact Information</h2>
+                            <p class="text-muted">Have a question or want to discuss a project? We'd love to hear from you.</p>
+                            <ul class="list-unstyled text-start mx-auto" style="max-width: 400px;">
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-map-marker-alt fa-2x text-primary me-3"></i>
+                                    <div>
+                                        <strong>Location:</strong>
+                                        <p class="mb-0">123 Tech Avenue, Innovation City, UG</p>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-envelope fa-2x text-primary me-3"></i>
+                                    <div>
+                                        <strong>Email:</strong>
+                                        <p class="mb-0">info@hypertech.com</p>
+                                    </div>
+                                </li>
+                                <li class="d-flex align-items-center mb-3">
+                                    <i class="fas fa-phone-alt fa-2x text-primary me-3"></i>
+                                    <div>
+                                        <strong>Phone:</strong>
+                                        <p class="mb-0">+256 746937568</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 mb-4 animate__animated animate__fadeInRight" style="animation-delay: 0.2s;">
+                    <div class="card shadow-sm border-0 text-center">
+                        <div class="card-body">
+                            <h2 class="h3 fw-bold text-primary">Contact Form</h2>
+                            <form action="#">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control form-control-lg" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email address</label>
+                                    <input type="email" class="form-control form-control-lg" id="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control form-control-lg" id="message" placeholder="Your Message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<a href="#" class="back-to-top btn btn-primary rounded-circle shadow" style="position: fixed; bottom: 20px; right: 20px; display: none; width: 50px; height: 50px; display: flex; align-items: center; justify-content: center;"><i class="fas fa-arrow-up"></i></a>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var backToTopBtn = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = 'flex';
+            } else {
+                backToTopBtn.style.display = 'none';
+            }
+        });
+    });
+</script>
 {% endblock %}
