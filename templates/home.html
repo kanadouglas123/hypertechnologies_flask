@@ -27,27 +27,27 @@
     </section>
 
     <!-- Animated Moving Images Section -->
-    <section class="moving-images py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Our Expertise</h2>
-            <div class="image-slider d-flex overflow-auto">
-                <img src="http://127.0.0.1:5000/static/images/app.png" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/web.jpeg" alt="AI Solutions" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/it.jpeg" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/tec.jpeg" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/vidoe.jpeg" alt="Cloud Computing" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/tec2.jpeg" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/grapic.jpeg" alt="Graphic Design" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/tec1.jpeg" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/app.png" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/web.jpeg" alt="AI Solutions" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/it.jpeg" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/vidoe.jpeg" alt="Cloud Computing" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/app.png" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
-                <img src="http://127.0.0.1:5000/static/images/it.jpeg" alt="App Development" class="img-fluid me-2" style="max-width: 200px;">
-            </div>
+   <section class="moving-images py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Expertise</h2>
+        <div class="image-slider d-flex overflow-auto">
+            <img src="{{ url_for('static', filename='images/app.png') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/web.jpeg') }}" alt="AI Solutions" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/it.jpeg') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/tec.jpeg') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/vidoe.jpeg') }}" alt="Cloud Computing" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/tec2.jpeg') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/grapic.jpeg') }}" alt="Graphic Design" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/tec1.jpeg') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/app.png') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/web.jpeg') }}" alt="AI Solutions" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/it.jpeg') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/vidoe.jpeg') }}" alt="Cloud Computing" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/app.png') }}" alt="Web Development" class="img-fluid me-2" style="max-width: 200px;">
+            <img src="{{ url_for('static', filename='images/it.jpeg') }}" alt="App Development" class="img-fluid me-2" style="max-width: 200px;">
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Testimonials Section with Smooth Fade-in Effect -->
     <section class="testimonials py-5 bg-light">
