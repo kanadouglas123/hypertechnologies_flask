@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    /* Contact Page Specific Styles */
+.contact-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/contact-bg.jpg') no-repeat center center;
+    background-size: cover;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-header h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.contact-section .info-box i {
+    font-size: 2.5rem;
+}
+
+.contact-form-card {
+    background-color: #fff;
+}
+</style>
+<header class="contact-header text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-3 fw-bold">Contact Us</h1>
+        <p class="lead">We're here to help and answer any question you might have.</p>
+    </div>
+</header>
+<section class="contact-section py-5">
+    <div class="container">
+        <h2 class="text-center text-primary mb-4">Get In Touch With Us</h2>
+        <p class="lead text-center">Have a question or need a tech solution? Contact us today!</p>
+        <div class="row g-4 mt-4">
+            <div class="col-md-5">
+                <div class="info-box bg-light p-4 rounded shadow-sm">
+                    <i class="fas fa-map-marker-alt text-primary mb-3"></i>
+                    <h3 class="h5 fw-bold">Our Location</h3>
+                    <p>HyperTech Office, Kampala, Uganda</p>
+                </div>
+                <div class="info-box bg-light p-4 rounded shadow-sm mt-4">
+                    <i class="fas fa-phone-alt text-primary mb-3"></i>
+                    <h3 class="h5 fw-bold">Phone</h3>
+                    <p>+256 746937568</p>
+                </div>
+                <div class="info-box bg-light p-4 rounded shadow-sm mt-4">
+                    <i class="fas fa-envelope text-primary mb-3"></i>
+                    <h3 class="h5 fw-bold">Email</h3>
+                    <p>kanadouglas5@gmail.com</p>
+                    <p>sales@hypertechnologies.com</p>
+                </div>
+                <div class="info-box bg-light p-4 rounded shadow-sm mt-4">
+                    <i class="fas fa-clock text-primary mb-3"></i>
+                    <h3 class="h5 fw-bold">Working Hours</h3>
+                    <p>Monday - Saturday<br>09:00 AM - 06:00 PM</p>
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="contact-form-card p-4 rounded shadow-lg bg-white">
+                    <h2 class="h4 text-primary mb-4">Send Us a Message</h2>
+                    <form method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="first_name" class="form-label">First Name *</label>
+                                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="last_name" class="form-label">Last Name</label>
+                                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="mobile" class="form-label">Mobile No *</label>
+                                <input type="text" name="mobile" id="mobile" class="form-control" placeholder="Mobile Number" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea name="message" id="message" class="form-control" placeholder="Your Message" rows="4" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                                <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 mt-2">
+                                    Submit <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

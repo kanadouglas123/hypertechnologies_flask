@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    /* Services Page Specific Styles */
+.services-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/services-bg.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.services-header h1 {
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.services-overview p.lead {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.services-grid .service-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.services-grid .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Base styles from previous examples are also needed */
+/* Example:
+body { font-family: 'Arial', sans-serif; color: #333; }
+.text-primary { color: #0d6efd !important; }
+*/
+</style>
+<header class="services-header text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-3 fw-bold">Our Services</h1>
+        <p class="lead">Delivering Future IT Solutions Today</p>
+    </div>
+</header>
+<section class="services-overview py-5">
+    <div class="container">
+        <h2 class="text-center text-primary mb-4">Our Comprehensive Services</h2>
+        <p class="lead text-center">At Hyper Technologies, we offer a diverse range of services designed to meet the unique needs of businesses and individuals in today’s digital age. Our solutions are customized to provide maximum impact, ensuring that each project is a success. Whether you are looking to build a mobile application, enhance your online presence, or integrate artificial intelligence into your operations, we have the expertise to bring your vision to life.</p>
+    </div>
+</section>
+<section class="services-grid py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="service-card h-100 p-4 border rounded shadow-sm text-center">
+                    <img src="{{ url_for('static', filename='images/app.png') }}" alt="App Development" class="img-fluid mb-3 service-icon">
+                    <h3 class="h5 fw-bold text-primary">App Development</h3>
+                    <p>We specialize in building high-performance mobile applications for both Android and iOS platforms. Our team creates scalable, secure, and feature-rich applications that offer seamless user experiences.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-card h-100 p-4 border rounded shadow-sm text-center">
+                    <img src="{{ url_for('static', filename='images/web.jpeg') }}" alt="Web Development" class="img-fluid mb-3 service-icon">
+                    <h3 class="h5 fw-bold text-primary">Web Development</h3>
+                    <p>We create modern, fast, and secure websites that cater to your business needs. From simple landing pages to complex, interactive websites, our web development services cover every aspect of the digital presence.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-card h-100 p-4 border rounded shadow-sm text-center">
+                    <img src="{{ url_for('static', filename='images/grapic.jpeg') }}" alt="Graphic Design" class="img-fluid mb-3 service-icon">
+                    <h3 class="h5 fw-bold text-primary">Graphic Design</h3>
+                    <p>Our graphic design team crafts visually stunning designs that make a lasting impact. Whether it’s branding, logo design, web graphics, or marketing materials, we create designs that effectively communicate your brand's message.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-card h-100 p-4 border rounded shadow-sm text-center">
+                    <img src="{{ url_for('static', filename='images/it.jpeg') }}" alt="IT Maintenance" class="img-fluid mb-3 service-icon">
+                    <h3 class="h5 fw-bold text-primary">IT Maintenance</h3>
+                    <p>We offer comprehensive IT maintenance services to ensure the smooth operation of your technical systems. Our team provides system optimization, troubleshooting, and regular updates to prevent downtimes.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-card h-100 p-4 border rounded shadow-sm text-center">
+                    <img src="{{ url_for('static', filename='images/tec1.jpeg') }}" alt="Phone & Laptop Repair" class="img-fluid mb-3 service-icon">
+                    <h3 class="h5 fw-bold text-primary">Phone & Laptop Repair</h3>
+                    <p>We provide fast and reliable repair services for all types of phones and laptops. From screen replacements to battery issues, our technicians are equipped to handle any repair with precision and care.</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="service-card h-100 p-4 border rounded shadow-sm text-center">
+                    <img src="{{ url_for('static', filename='images/tec2.jpeg') }}" alt="AI Models" class="img-fluid mb-3 service-icon">
+                    <h3 class="h5 fw-bold text-primary">AI Models</h3>
+                    <p>Our AI development team creates machine learning and artificial intelligence models that help businesses make data-driven decisions, improve efficiency, and automate processes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

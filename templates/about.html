@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    /* Basic page styles */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Header Section */
+.about-header {
+    background: url('../images/header-bg.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.about-header h1 {
+    position: relative;
+    z-index: 10;
+    font-size: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Sections */
+.about-section,
+.team-section,
+.achievements-section {
+    padding: 60px 0;
+}
+
+/* Team Member Images */
+.team-member img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.team-member img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Achievement Boxes */
+.achievement-box {
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.achievement-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+.achievement-box h3 {
+    font-size: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .about-header h1 {
+        font-size: 2.5rem;
+    }
+    .achievement-box h3 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-header {
+        height: 250px;
+    }
+    .about-header h1 {
+        font-size: 2rem;
+    }
+    .about-section p.lead {
+        font-size: 1rem;
+    }
+}
+</style>
+
+<header class="about-header text-white text-center py-5">
+    <div class="overlay"></div>
+    <div class="container">
+        <h1 class="display-3 fw-bold">About Hyper Technologies</h1>
+        <p class="lead">Pioneering tomorrow's technology today.</p>
+    </div>
+</header>
+<section class="about-section py-5">
+    <div class="container">
+        <p class="lead text-center mb-5">Hyper Technologies is a leading tech company specializing in AI, web development, and cloud computing. We are driven by a passion for innovation and a commitment to delivering exceptional digital solutions.</p>
+        <div class="row gx-5">
+            <div class="col-md-6 mb-4">
+                <h2 class="text-primary">Our Mission</h2>
+                <p>At Hyper Technologies, our mission is to innovate and deliver top-tier technology solutions that empower businesses and individuals worldwide. We are committed to excellence, integrity, and customer satisfaction. We strive to be a trusted partner in our clients' growth and success.</p>
+            </div>
+            <div class="col-md-6 mb-4">
+                <h2 class="text-primary">Our Values</h2>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-lightbulb text-primary me-2"></i><strong>Innovation:</strong> We embrace cutting-edge technologies to stay ahead of industry trends.</li>
+                    <li><i class="fas fa-medal text-primary me-2"></i><strong>Excellence:</strong> Delivering high-quality solutions is our top priority.</li>
+                    <li><i class="fas fa-shield-alt text-primary me-2"></i><strong>Integrity:</strong> We conduct all our dealings with transparency and trust.</li>
+                    <li><i class="fas fa-users text-primary me-2"></i><strong>Customer Focus:</strong> We ensure client satisfaction at every step of the process.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="who-we-are-section bg-light py-5">
+    <div class="container">
+        <div class="row align-items-center gx-5">
+            <div class="col-md-6 mb-4">
+                <img src="{{ url_for('static', filename='images/our-story.jpg') }}" alt="Our Story" class="img-fluid rounded shadow-sm">
+            </div>
+            <div class="col-md-6 mb-4">
+                <h2 class="text-primary">Who We Are</h2>
+                <p>Founded on the principles of creativity and technical excellence, Hyper Technologies began with a simple goal: to make technology accessible and impactful for everyone. Our journey has been defined by our ability to adapt to a rapidly changing digital landscape, always pushing the boundaries of what's possible.</p>
+                <p>Today, we are a diverse team of passionate experts dedicated to solving complex problems and creating innovative products that drive real-world results.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="my-5">
+
+<section class="team-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 text-primary">Meet Our Team</h2>
+        <div class="row text-center gx-4 gy-4">
+            <div class="col-sm-6 col-md-4 team-member">
+                <img src="{{ url_for('static', filename='images/douglas.jpg') }}" alt="Team Member" class="img-fluid rounded-circle mb-3 border border-3 border-primary shadow-sm">
+                <h3 class="h5 fw-bold">Eng. Wasswa Douglas</h3>
+                <p class="text-muted">Founder & CEO</p>
+            </div>
+            <div class="col-sm-6 col-md-4 team-member">
+                <img src="{{ url_for('static', filename='images/cathy.jpg') }}" alt="Team Member" class="img-fluid rounded-circle mb-3 border border-3 border-primary shadow-sm">
+                <h3 class="h5 fw-bold">Naluyange Catherine</h3>
+                <p class="text-muted">Chief Technology Officer</p>
+            </div>
+            <div class="col-sm-6 col-md-4 team-member">
+                <img src="{{ url_for('static', filename='images/douglas.jpg') }}" alt="Team Member" class="img-fluid rounded-circle mb-3 border border-3 border-primary shadow-sm">
+                <h3 class="h5 fw-bold">John Doe</h3>
+                <p class="text-muted">Marketing Manager</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="my-5">
+
+<section class="achievements-section bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 text-primary">Our Achievements</h2>
+        <div class="row text-center gx-4 gy-4">
+            <div class="col-sm-6 col-md-3">
+                <div class="achievement-box p-4 border rounded shadow-sm bg-white">
+                    <h3 class="display-4 fw-bold text-primary">10+</h3>
+                    <p class="lead text-muted">Projects Completed</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="achievement-box p-4 border rounded shadow-sm bg-white">
+                    <h3 class="display-4 fw-bold text-primary">20+</h3>
+                    <p class="lead text-muted">Clients Worldwide</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="achievement-box p-4 border rounded shadow-sm bg-white">
+                    <h3 class="display-4 fw-bold text-primary">10+</h3>
+                    <p class="lead text-muted">Awards Won</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+                <div class="achievement-box p-4 border rounded shadow-sm bg-white">
+                    <h3 class="display-4 fw-bold text-primary">50+</h3>
+                    <p class="lead text-muted">Team Members</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
